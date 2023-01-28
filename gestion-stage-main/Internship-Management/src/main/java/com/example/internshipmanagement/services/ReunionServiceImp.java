@@ -41,4 +41,14 @@ public class ReunionServiceImp implements ReunionService{
         reunion.ifPresent(reunionRepository::delete);
         return reunion.map(reunionMapper::toDto);
     }
+
+    @Override
+    public List<ReunionDTO> getReunionByEtudiant(Long id) {
+        return reunionMapper.listToDtos(reunionRepository.findReunionByEtudiantId(id));
+    }
+
+    @Override
+    public List<ReunionDTO> getReunionByProf(Long id) {
+        return reunionMapper.listToDtos(reunionRepository.findReunionByProfesseurId(id));
+    }
 }

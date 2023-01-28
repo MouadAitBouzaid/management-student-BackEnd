@@ -53,6 +53,11 @@ public class EtudiantController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/etudiants/prof/{id}")
+    public ResponseEntity<List<EtudiantDTO>> findByProf(@PathVariable(value = "id") Long profid){
+        return ResponseEntity.ok(etudiantService.getEtudiantByProf(profid));
+    }
+
 
 
 }

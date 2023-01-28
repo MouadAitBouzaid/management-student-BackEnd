@@ -43,6 +43,16 @@ public class ReunionController {
         return ResponseEntity.ok(reunionService.getEtudiantById(reunionId).get());
     }
 
+    @GetMapping("/reunions/user/{id}")
+    public ResponseEntity<List<ReunionDTO>> getReunionByEtudiant(@PathVariable(value = "id")Long etudiantId){
+        return ResponseEntity.ok(reunionService.getReunionByEtudiant(etudiantId));
+    }
+
+    @GetMapping("/reunions/prof/{id}")
+    public ResponseEntity<List<ReunionDTO>> getReunionByProf(@PathVariable(value = "id")Long proftId){
+        return ResponseEntity.ok(reunionService.getReunionByProf(proftId));
+    }
+
 
 
 }

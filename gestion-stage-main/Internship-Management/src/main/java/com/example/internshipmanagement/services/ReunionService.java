@@ -11,4 +11,8 @@ public interface ReunionService {
     Optional<ReunionDTO> getEtudiantById(Long reunionId);
     Optional<ReunionDTO> deleteEtudiant(Long reunionId);
 
+    List<ReunionDTO> getReunionByEtudiant(Long id);
+
+    List<ReunionDTO> getReunionByProf(Long id);
+
 }

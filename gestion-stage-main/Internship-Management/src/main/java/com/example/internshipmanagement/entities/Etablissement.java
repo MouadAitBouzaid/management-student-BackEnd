@@ -16,11 +16,18 @@ public class Etablissement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private String mail;
+
+    @Column(nullable = false)
+    private String address;
     @OneToMany(mappedBy = "etablissement", fetch = FetchType.EAGER)
    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Etudiant> etudiantList;
-    @OneToOne
-    private ResponsableStage responssableEtab;
+    //@OneToOne
+    //private ResponsableStage responssableEtab;
 
 }
