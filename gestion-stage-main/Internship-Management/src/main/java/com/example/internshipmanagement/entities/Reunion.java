@@ -17,7 +17,6 @@ public class Reunion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String dateReunion;
     @ManyToOne
     private Etudiant etudiant;
